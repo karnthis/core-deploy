@@ -1,0 +1,75 @@
+body {
+  background: #242424;
+  color: #727271;
+  font-size: 24px; }
+
+.navbar {
+  opacity: .8;
+  font-size: 18px;
+  color: #727271; }
+
+#home-section {
+  background: url("../img/space-bg.jpg") no-repeat;
+  min-height: 200px;
+  background-size: cover;
+  background-attachment: fixed;
+  border-bottom: #0646ad 3px solid;
+  /*
+  .dark-overlay {
+    background-color: $dark-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 200px;
+  }
+  */ }
+  #home-section .home-inner {
+    padding-top: 100px; }
+  #home-section .card-form {
+    opacity: .8; }
+
+.top {
+  margin-top: 50px; }
+  .top a {
+    color: #0646ad; }
+  .top .bg-light {
+    background-color: #727271;
+    color: #0646ad; }
+
+.flex-row .fa {
+  margin-top: 10px;
+  font-size: 50px; }
+
+#title {
+  text-align: center;
+  margin-bottom: 25px; }
+
+.mc-sql-card {
+  min-height: 100px; }
+  .mc-sql-card .card-title {
+    font-size: 36px;
+    color: #0646ad; }
+
+.mc-bat-card {
+  color: #242424;
+  min-height: 98.7%; }
+  .mc-bat-card .card-title {
+    font-size: 36px;
+    color: #0646ad; }
+
+.img {
+  margin-right: 25px; }
+
+.card-highlight {
+  background-color: #0646ad; }
+  .card-highlight h2 {
+    text-align: center; }
+
+.card-main {
+  background-color: #727271; }
+
+.card-primary {
+  background-color: #383838; }
+  .card-primary h2 {
+    text-align: center; }

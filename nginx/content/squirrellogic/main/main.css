@@ -1,0 +1,118 @@
+*{
+  /* box-sizing: border-box; */
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1500px 1fr;
+	grid-template-areas:
+		". playfield .";
+	background-color: rgb(224, 147, 69);
+}
+
+.main {
+	grid-area: playfield;
+	display: grid;
+	grid-auto-rows: 150px;
+	grid-template-columns: 149px repeat(8, 148px) 149px;
+	grid-template-areas:
+		"clicker clicker"
+		"clicker clicker";
+	grid-gap: 2px;
+	background-color: peru;
+	/* border: 2px;
+	border-style: solid; */
+	/* justify-self: stretch; */
+	min-height: 100vh;
+}
+
+#special {
+	grid-area: clicker;
+	/* justify-self: stretch; */
+	background-color: darkolivegreen;
+}
+
+.autoClicker {
+	/* border: 2px;
+	border-style: solid; */
+	/* justify-self: stretch; */
+	background-color: lightblue;
+	display: grid;
+	grid-template-rows: 33% 34% 33%;
+	grid-template-columns: 70% 30%;
+	grid-template-areas:
+		"display ."
+		"display ."
+		"buyone upgrade";
+
+}
+
+.title {
+	grid-area: display;
+	/* justify-self: stretch; */
+}
+
+.buy {
+	border: 2px;
+	border-style: solid;
+	/* justify-self: stretch; */
+
+}
+
+.buyClicker {
+	grid-area: buyone;
+}
+
+@media screen and (max-width: 1510px) {
+  .container {
+    grid-template-columns: 1fr 1200px 1fr;
+	}
+	.main {
+		grid-template-columns: 149px repeat(6, 148px) 149px;
+	}
+}
+
+@media screen and (max-width: 1210px) {
+  .container {
+    grid-template-columns: 1fr 900px 1fr;
+	}
+	.main {
+		grid-template-columns: 149px repeat(4, 148px) 149px;
+	}
+}
+
+@media screen and (max-width: 910px) {
+  .container {
+    grid-template-columns: 1fr 600px 1fr;
+	}
+	.main {
+		grid-template-rows: repeat(30, 100px);
+		grid-template-columns: 99px repeat(4, 98px) 99px;
+	}
+}
+
+@media screen and (max-width: 610px) {
+  .container {
+    grid-template-columns: 1fr 300px 1fr;
+	}
+	.main {
+		/* grid-template-rows: repeat(30, 100px); */
+		grid-template-columns: 99px 98px 99px;
+		grid-template-areas:
+		"clicker";
+	}
+}
+
+@media screen and (max-width: 310px) {
+  .container {
+    grid-template-columns: 1fr 150px 1fr;
+	}
+	.main {
+		/* grid-template-rows: repeat(30, 100px); */
+		grid-template-columns: 150px;
+		/* grid-template-areas: */
+		/* "clicker"; */
+	}
+}

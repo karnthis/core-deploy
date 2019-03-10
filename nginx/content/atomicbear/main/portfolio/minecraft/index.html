@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="shortcut icon" href="/assets/favicon.ico">
+	<title>Erin Witt | Portfolio</title>
+</head>
+
+<body id="home">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container">
+    <a href="/" class="navbar-brand">Home</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/portfolio" class="nav-link">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="dropdown-toggle nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="https://www.linkedin.com/in/erin-rivas-60615a130/" target="_blank">
+                <span>
+                  <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </span> LinkedIn</a>
+              <a class="dropdown-item" href="https://github.com/karnthis" target="_blank">
+                <span>
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </span> Github</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <span>
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span> contact@atomicbear.com</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <header id="home-section">
+	<div class="dark-overlay">
+		<div class="home-inner">
+
+		</div>
+	</div>
+</header>
+
+<section id="minecraft" class="top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card my-2 card-main mc-bat-card">
+					<div class="card-body">
+						<div class="card-title">
+							<strong>clearclaims.bat</strong>
+						</div>
+						<div class="card-text">
+							<p>@echo off</p>
+							<p>set Log=C:\scripts\logs\clearclaims\%date:~-4,4%%date:~-10,2%%date:~-7,2%_report.log</p>
+							<p>echo Job run on %date% at %time% by %UserName% >> %Log%</p>
+							<p>echo ** Start scan results ** >> %Log%</p>
+							<p>C:\Multicraft\mysql\bin\mysql.exe -u -p db
+								< C:\scripts\sql\check.sql 1>>%Log% 2>>&1</p>
+							<p>C:\Multicraft\mysql\bin\mysql.exe -u -p db
+								< C:\scripts\sql\delete.sql 1>>%Log% 2>>&1</p>
+							<p>echo ** End scan results ** >> %Log%</p>
+							<p>echo -- -- >> %Log%</p>
+							<p>echo. >> %Log%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="card my-2 card-primary mc-sql-card">
+					<div class="card-body">
+						<div class="card-title">
+							<strong>check.sql</strong>
+						</div>
+						<div class="card-text">
+							<p>SELECT * FROM griefprevention_claimdata</p>
+							<p>WHERE lessercorner NOT LIKE "world%"</p>
+							<p>AND lessercorner NOT LIKE "DIM1;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-1;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM6;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM7;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-37;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-42;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-112;%"</p>
+						</div>
+					</div>
+				</div>
+				<div class="card my-2 card-primary mc-sql-card">
+					<div class="card-body">
+						<div class="card-title">
+							<strong>delete.sql</strong>
+						</div>
+						<div class="card-text">
+							<p>DELETE FROM griefprevention_claimdata</p>
+							<p>WHERE lessercorner NOT LIKE "world%"</p>
+							<p>AND lessercorner NOT LIKE "DIM1;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-1;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM6;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM7;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-37;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-42;%"</p>
+							<p>AND lessercorner NOT LIKE "DIM-112;%"</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+  
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+# defaultEntryPoints = ["http", "https"]
+defaultEntryPoints = ["https"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+      entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[acme]
+email = "contact@atomicbear.com"
+storage = "acme.json"
+caServer = "https://acme-v02.api.letsencrypt.org/directory"
+entryPoint = "https"
+  [acme.dnsChallenge]
+  provider = "digitalocean" # DNS Provider name (cloudflare, OVH, gandi...)
+  delayBeforeCheck = 0
+
+[[acme.domains]]
+  main = "*.atomicbear.com"
+  sans = ["atomicbear.com"]
+[[acme.domains]]
+  main = "*.irl.technology"
+  sans = ["irl.technology"]
+[[acme.domains]]
+  main = "*.karnthis.com"
+  sans = ["karnthis.com"]
+[[acme.domains]]
+  main = "*.ritemeow.com"
+  sans = ["ritemeow.com"]
+[[acme.domains]]
+  main = "*.squirrellogic.com"
+  sans = ["squirrellogic.com"]

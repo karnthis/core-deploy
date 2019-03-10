@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="cb.js"></script>
+	<script src="main.js"></script>
+	<title>Project Post Formatter</title>
+	<style>
+		#submission-group {
+			display: grid;
+			grid-template-columns: 2fr 3fr;
+			width: 500px;
+		}
+
+		#cb-group {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	</style>
+</head>
+<body>
+	<form id="submission-group">
+		<label for="uname">Discord User ID:</label>
+		<input type="text" name="uname">
+		<!--  -->
+		<label for="pname">Project Name:</label>
+		<input type="text" name="pname">
+		<!--  -->
+		<label for="desc">Short Project Description:</label>
+		<textarea name="desc" cols="15" rows="5"></textarea>
+		<!--  -->
+		<label for="surl">Source URL:</label>
+		<input type="text" name="surl">
+		<!--  -->
+		<label for="durl">Demo URL:</label>
+		<input type="text" name="durl">
+		<!--  -->
+		<label for="pname">Stack:</label>
+		<div id="cb-group">
+			<!-- populated by js -->
+		</div>
+		<!--  -->
+		
+	</form>
+	<br><br>
+	<button id="format-btn">Format!</button>
+	<hr>
+	<div class="container">
+		<textarea name="formatted-output" id="output" cols="50" rows="15">Please submit above</textarea>
+	</div>
+	
+</body>
+</html>

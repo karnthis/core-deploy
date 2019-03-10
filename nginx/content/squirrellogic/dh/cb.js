@@ -1,0 +1,21 @@
+ const cbValues = [
+	"Node",
+	"React",
+	"Angular",
+	"HTML",
+	"CSS",
+	"SCSS",
+	"JavaScript",
+	"Java",
+	"PHP",
+	"Laravel",
+	"MongoDB",
+	"MySQL",
+	"PostgreSQL",
+	"Python",
+	"Lua",
+	"Golang",
+	"C++",
+	"C#",
+	"DiscordJS"
+ ]
