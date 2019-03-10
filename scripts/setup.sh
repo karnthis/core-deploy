@@ -7,7 +7,7 @@ echo "+++++ install starting build repo +++++"
 cd /
 sudo git clone https://github.com/karnthis/core-deploy.git
 sudo mv core-deploy _prod
-sudo chown -R ${USER}: _prod
+sudo chown -R ${USER}: /_prod
 echo "+++++ update acme file perms +++++"
 # update acme file perms
 cd /_prod/traefik
@@ -27,7 +27,8 @@ sudo apt install docker-ce docker-ce-cli
 sudo systemctl enable docker
 echo "+++++ update users with docker powers +++++"
 # update users with docker powers
-sudo usermod -aG docker ${USER}
+sudo groupadd docker
+sudo usermod -aG docker $USER
 echo "+++++ install docker-compose +++++"
 # install docker-compose
 sudo apt install docker-compose
