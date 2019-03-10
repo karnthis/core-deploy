@@ -24,6 +24,10 @@ cd ~
 sudo cp .ssh ../$NEWUSER/.ssh
 sudo chown -R $NEWUSER:$NEWUSER ../$NEWUSER
 echo "++++++++++"
+# nodejs install
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install -y nodejs
+echo "++++++++++"
 # Docker install + setup
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
