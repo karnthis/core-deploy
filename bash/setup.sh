@@ -8,6 +8,10 @@ cd /
 sudo git clone https://github.com/karnthis/core-deploy.git
 sudo mv core-deploy _prod
 sudo chown -R ${USER}: /_prod
+echo "+++++ move bin and related files +++++"
+# move bash files
+mv "/_prod/bash/bin" ~
+chmod u+x ~/bin/*
 echo "+++++ update acme file perms +++++"
 # update acme file perms
 cd /_prod/traefik
