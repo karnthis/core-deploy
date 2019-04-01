@@ -45,15 +45,21 @@
 	</div>
 
 	<script>
-		getKitty()
-		.then(res => {
-			const tagged = document.querySelector('.display')
-			const replacement = document.createElement('img')
-			replacement.setAttribute('src', res.url)
-			replacement.setAttribute('alt', 'A lovely cat')
-			replacement.setAttribute('class', 'display')
-			tagged.parentNode.replaceChild(replacement, tagged)
-		})
+		function localCat() {
+			getKitty()
+			.then(res => {
+				const tagged = document.querySelector('.display')
+				const replacement = document.createElement('img')
+				replacement.setAttribute('src', res.url)
+				replacement.setAttribute('alt', 'A lovely cat')
+				replacement.setAttribute('class', 'display')
+				tagged.parentNode.replaceChild(replacement, tagged)
+			})
+		}
+
+		document.querySelector('.show').addEventListener('click', localCat)
+
+		localCat()
 	</script>
 </body>
 </html>
