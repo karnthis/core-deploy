@@ -1,0 +1,62 @@
+:root {
+	--primaryColor: red;
+	--primaryText: red;
+	--secondaryColor: blue;
+	--secondaryText: blue;
+	--highlightColor: green;
+	--highlightText: green;
+	--backgroundColor: brown;
+}
+
+html, body, .wrap {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	background-color: var(--backgroundColor);
+}
+.wrap, .wrap > * {
+	display: grid;
+}
+.wrap {
+	grid-template-columns: 75px 1fr 75px;
+	grid-template-rows: repeat(2, minmax(min-content, max-content));
+	background-color: var(--backgroundColor);
+}
+
+.top {
+	grid-column: span 3;
+	grid-template-rows: repeat(auto, minmax(min-content, max-content));
+}
+nav {
+	display: grid;
+	grid-template-columns: repeat(auto, minmax(min-content, max-content));
+	grid-template-rows: 1fr;
+	grid-auto-flow: column;
+	background-color: var(--primaryColor);
+	height: 60px;
+	font-size: 1.6em;
+	justify-items: center;
+	align-items: center;
+}
+.social {
+	display: grid;
+	grid-template-columns: repeat(auto, minmax(min-content, max-content));
+	grid-template-rows: 1fr 1fr;
+}
+.social > span {
+	grid-column: span;
+}
+.split {
+	background-color: var(--highlightColor);
+	height: 5px;
+}
+.banner {
+	background-color: var(--secondaryColor);
+	height: 25px;
+}
+
+.main {
+	grid-column: 2;
+	grid-template-rows: repeat(auto, minmax(min-content, max-content));
+
+}
