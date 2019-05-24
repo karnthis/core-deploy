@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<script src="https://unpkg.com/mithril/mithril.js"></script>
+	<script type="module" src="../libs/local/index.js"></script>
+	<script>
+		
+		const storedToken = localStorage.getItem("token")
+		if (!storedToken) {
+			// window.location = `/#!/login`
+		}
+	</script>
+
+
+	<link rel="stylesheet" href="../styles/main.css">
+
+	<!-- <link rel="stylesheet" href="./styles/main.css">
+	<script src="./libs/class.js"></script>
+	<script src="./libs/main.js"></script> -->
+
+	<title>CWAC 2019: Main</title>
+</head>
+
+<body>
+	<div class="topbar"></div>
+	<div class="maincontent"></div>
+	<!-- placeholder -->
+</body>
+
+</html>
