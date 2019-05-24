@@ -23,6 +23,9 @@ entryPoint = "https"
   main = "*.atomicbear.com"
   sans = ["atomicbear.com"]
 [[acme.domains]]
+  main = "*.cwac2019.irl.technology"
+  sans = ["cwac2019.irl.technology"]
+[[acme.domains]]
   main = "*.irl.technology"
   sans = ["irl.technology"]
 [[acme.domains]]

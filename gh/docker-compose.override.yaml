@@ -1,0 +1,46 @@
+version: "3"
+
+# GENERATEHEALTH CWAC2019
+volumes:
+  ghdbdata:
+
+services:
+  ghdb-main:
+    image: postgres:latest
+    container_name: "ghdb-main"
+    restart: always
+    networks:
+      - main-net
+    environment:
+      POSTGRES_PASSWORD: '${GHDBPW}'
+    volumes:
+      - "ghdbdata:/var/lib/postgresql/data"
+    labels:
+      - traefik.backend=ghdb-main
+
+  api-genhealth:
+    image: node:latest
+    container_name: "api-genhealth"
+    restart: always
+    command: ["node", "index"]
+    environment: 
+      NODE_ENV: ${RUN_ENV}
+      MUST_MATCH: ${MUST_MATCH}
+      IS_PROD: ${IS_PROD}
+      PGHOST: 'ghdb-main'
+      PGDATABASE: 'postgres'
+      PGUSER: 'postgres'
+      PGPASSWORD: '${GHDBPW}'
+    working_dir: /home/app
+    networks:
+      - main-net
+    depends_on:
+      - traefik-proxy
+      - ghdb-main
+    volumes:
+      - "/genhealth/api-nodejs/:/home/app"
+    labels:
+      - traefik.backend=api-genhealth
+      - traefik.frontend.rule=Host:api.${GHDOMAIN}
+      - traefik.port=51515
+      - traefik.frontend.priority=5
