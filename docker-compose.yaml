@@ -5,6 +5,7 @@ networks:
 
 volumes:
   dbdata:
+  mysqldata:
 
 services:
   traefik-proxy:
@@ -64,7 +65,44 @@ services:
   #     - traefik.frontend.rule=Host:postgres.${COREDOMAIN}
   #     - traefik.port=5432
   #     - traefik.frontend.priority=5
-      
+
+
+  db:
+    image: mysql:5.7
+    container_name: "mysqldb"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQLPW}
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - main-net
+    volumes:
+      - mysqldata:/var/lib/mysql
+    labels:
+      - traefik.backend=mysqldb
+
+  wordpress:
+    image: wordpress:latest
+    container_name: "bloomswordpress"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysqldb
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${MYSQLPW}
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - main-net
+    depends_on:
+      - traefik-proxy
+      - mysqldb
+    labels:
+      - traefik.backend=bloomswordpress
+      - traefik.frontend.rule=Host:${WORDPRESSURL}
+      - traefik.port=80
+      - traefik.frontend.priority=5
+
   nodejs1:
     image: node:latest
     container_name: "nodejs1"
