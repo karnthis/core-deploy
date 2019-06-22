@@ -67,7 +67,7 @@ services:
   #     - traefik.frontend.priority=5
 
 
-  db:
+  mysqldb:
     image: mysql:5.7
     container_name: "mysqldb"
     restart: always
