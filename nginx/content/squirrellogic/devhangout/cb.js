@@ -15,6 +15,8 @@
 	"Python",
 	"Lua",
 	"Golang",
+	"Docker",
+	"YAML",
 	"C++",
 	"C#",
 	"DiscordJS"
