@@ -1,3 +1,4 @@
 node_modules
 .env
 notes
+docker-compose.override.yaml

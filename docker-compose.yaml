@@ -73,9 +73,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQLPW}
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_DATABASE: 'wordpress'
+      MYSQL_USER: 'wordpress'
+      MYSQL_PASSWORD: 'wordpress'
     networks:
       - main-net
     volumes:
@@ -88,10 +88,10 @@ services:
     container_name: "bloomswordpress"
     restart: always
     environment:
-      WORDPRESS_DB_HOST: mysqldb
-      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_HOST: 'mysqldb'
+      WORDPRESS_DB_USER: 'wordpress'
       WORDPRESS_DB_PASSWORD: ${MYSQLPW}
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: 'wordpress'
     networks:
       - main-net
     depends_on:
