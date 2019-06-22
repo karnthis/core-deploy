@@ -39,4 +39,4 @@ entryPoint = "https"
   sans = ["squirrellogic.com"]
 [[acme.domains]]
   main = "*.gatheringblooms.com"
-  sans = ["squirrellogic.com"]
+  sans = ["gatheringblooms.com"]
